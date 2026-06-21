@@ -9,23 +9,23 @@ jobs:
 
         steps: 
             - name: Checkout Code
-            uses: actions/checkout@v4
+              uses: actions/checkout@v4
 
             - name: Setup JDK
-            uses: actions/setup-java@v5
-            with:
+              uses: actions/setup-java@v5
+              with:
                 distribution: 'temurin'
                 java-version: '21'
             
             - name: Build and Test(Maven)
-            working-directory: docker/app1-hello/springboot/hello-spring
-            run: mvn -B clean verify
+              working-directory: docker/app1-hello/springboot/hello-spring
+              run: mvn -B clean verify
             
             - name: Upload Test Report
-            uses: actions/upload-artifact@v4
-            with:
-                name: test-report   
-                path: docker/app1-hello/springboot/hello-spring/target/surefire-reports
+              uses: actions/upload-artifact@v4
+              with:
+                 name: test-report   
+                 path: docker/app1-hello/springboot/hello-spring/target/surefire-reports
 
 
     docker-build-push:
@@ -34,16 +34,16 @@ jobs:
 
         steps: 
             - name: Checkout Code
-            run: echo " "
+              run: echo " "
 
-            - name: Setup JDK
-            run: echo " "
+            - name: not yet
+              run: echo " "
             
             - name: Build JAR for Docker
-            run: echo " "
+              run: echo " "
             
             - name: Login to DockerHub
-            run: echo " "
+              run: echo " "
 
             - name: Build and Push Docker Image
-            run: echo " "
+              run: echo " "
