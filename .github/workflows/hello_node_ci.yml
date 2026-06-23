@@ -25,6 +25,7 @@ jobs:
               run: npm install
 
             - name: Build and Test
+              working-directory: docker/app1-hello/node
               run: | 
                 npm run build
                 npm test
