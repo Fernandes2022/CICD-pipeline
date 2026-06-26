@@ -2,11 +2,11 @@ name: Hello Node App To Docker CI
 
 on: 
 #   workflow_dispatch:
-  push
+  push:
     # branches:
     #       - main
-    # paths:
-    #   - 'docker/app1-hello/node'
+    paths:
+      - 'docker/app1-hello/node'
 
 jobs: 
     build-test:
@@ -19,15 +19,15 @@ jobs:
             - name: Setup Node.js
               uses: actions/setup-node@v4
               with:
-                node-version: '21'
+                node-version: '25'
 
             - name: Install dependencies
               working-directory: docker/app1-hello/node
-              run: npm install
+              run: npm ci
 
             - name: Build and Test
               working-directory: docker/app1-hello/node
-              run: npm test -- --passWithNoTests
+              run: npm test --if-present
 
             
             - name: Upload Test Report
@@ -45,10 +45,10 @@ jobs:
             - name: Checkout Code
               uses: actions/checkout@v4
 
-            - name: Setup Node.js
-              uses: actions/setup-node@v4   
-              with:
-                node-version: '21'
+            # - name: Setup Node.js
+            #   uses: actions/setup-node@v4   
+            #   with:
+            #     node-version: '21'
 
             
             - name: Install dependencies
