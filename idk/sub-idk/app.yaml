@@ -32,7 +32,7 @@ spec:
                 name: db-secret
                 key: DB_PASSWORD
         ports:
-        - containerPort: 80
+        - containerPort: 8080
 
 ---
 apiVersion: v1

@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: myapp
-        image: embarkx/hello-node:latest
+        image: embarkx/hello-spring:latest
         # env:
         #   - name: APP_MESSAGE
         #     value: "Hello, adding environment variables at production stage!"
