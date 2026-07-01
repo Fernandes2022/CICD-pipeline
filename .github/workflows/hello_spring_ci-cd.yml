@@ -1,7 +1,7 @@
 name: Hello Spring Boot App To AWS EKS
 
 on: 
-  workflow_dispatch:
+  # workflow_dispatch:
   push
     # branches:
     #       - main
